@@ -4,10 +4,13 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
     {path:'about', component:AboutComponent},
     {path:'login', component:LoginComponent},
     {path:'contact', component:ContactComponent},
-    {path:'',component:HomeComponent}
+    {path:'',component:HomeComponent},
+    {path:'**',component:PageNotFoundComponent} // ' ** ' :  is wildcard routing...
+                                                // always must be at bottom...
 ];
