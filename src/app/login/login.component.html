@@ -36,7 +36,8 @@
     <span class="error" *ngIf="name.invalid && name.touched">Name is Required</span>
     <br><br>
 
-    <input type="password" minlength="5" maxlength="10" #password="ngModel" placeholder="enter password" name="password" ngModel>
+    <input type="password" minlength="5" maxlength="10" #password="ngModel" placeholder="enter password" name="password"
+        ngModel>
     <span class="error" *ngIf="password.invalid && password.touched">Please enter valid Password</span>
     <br><br>
 
@@ -45,7 +46,7 @@
     <br><br>
 
     <input type="text" #address="ngModel" pattern="[a-zA-Z0-9\s]+" placeholder="enter address" name="address" ngModel>
-    <span class="error" *ngIf="address.invalid && address.touched" >Please enter valid address</span>
+    <span class="error" *ngIf="address.invalid && address.touched">Please enter valid address</span>
     <br><br>
 
     <select #gender="ngModel" required name="gender" ngModel>
@@ -53,7 +54,7 @@
         <option value="male">Male</option>
         <option value="female">Female</option>
     </select>
-    <span class="error" *ngIf="gender.invalid && gender.touched" >Please select a gender</span>
+    <span class="error" *ngIf="gender.invalid && gender.touched">Please select a gender</span>
     <br><br>
     <br><br>
 
