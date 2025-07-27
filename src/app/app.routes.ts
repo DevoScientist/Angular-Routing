@@ -5,13 +5,15 @@ import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { UserComponent } from './user/user.component';
 
 export const routes: Routes = [
     {path:'about', component:AboutComponent},
     {path:'login', component:LoginComponent},
     {path:'contact', component:ContactComponent},
     {path:'',component:HomeComponent},
-    {path:'profile',component:ProfileComponent},
+    {path:'profile',component:ProfileComponent, data:{name:"Virat Kohli"}},
+    {path:'user/:id/:name',component:UserComponent},
     {path:'**',component:PageNotFoundComponent} // ' ** ' :  is wildcard routing...
                                                 // always must be at bottom...
 ];
