@@ -1,14 +1,32 @@
-<h1>Routing in Angular!!!</h1>
+<!-- <h1>Angular Pipes</h1> -->
 
-<ul>
-  <li>
-    <a routerLink="./login">Login</a>
-  </li>
-  <li>
-    <a routerLink="/about">About</a>
-  </li>
-  <li>
-    <a routerLink="/contact">Contact</a>
-  </li>
-</ul>
-<router-outlet />
+<!-- <h2>{{title}}</h2>
+<h2>{{title | uppercase}}</h2>
+<h2>{{title | titlecase}}</h2>
+<h2>{{name | lowercase}}</h2>
+
+//date pipes
+<h2>{{date | date}}</h2> 
+
+//prameterized date
+<h2>{{date | date:'fullDate' | uppercase}}</h2> 
+<h2>{{date | date:'hh:mm:ss'}}</h2>  -->
+
+
+<!-- <h2>{{amount | currencyConverter:10}}</h2>  -->
+
+@for (product of prodctList; track product.id) {
+    <div>
+        <ul>
+            <li><b>Name : </b>{{product.title}}</li>
+            <li><b>Desc : </b>{{product.description}}</li>
+            <li><b>Price : </b>{{product.price}}</li>
+            <li><b>Rating : </b>{{product.rating}}</li>
+            <li><img src="{{product.thumbnail}}" alt="image"></li>
+        </ul>
+    </div>
+}
+
+
+
+
