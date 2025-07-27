@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
-import { ReuseUserComponent } from "./reuse-user/reuse-user.component";
+import { ChildComponent } from './child/child.component';
 
 @Component({
   selector: 'app-root',
-  imports: [ReuseUserComponent],
+  imports: [ChildComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+
   
-  users = ["Alice", "Bob", "Charlie", "Diana", "Ethan", "Fiona", "George", "Hannah", "Ivan", "Julia"];
-
-
+  users: undefined | string[];
+  handleUsers(users:string[]){
+    console.log(users);
+    this.users = users;
+  }
 }

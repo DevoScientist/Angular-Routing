@@ -17,10 +17,18 @@
     <option value="Tony">Tony</option>
 </select> -->
 
-<h1>Reuse Components</h1>
+<!-- <h1>Reuse Components</h1> -->
 
-@for (user of users; track $index) {
+<!-- @for (user of users; track $index) {
     <div>
         <app-reuse-user [user] = "user"></app-reuse-user>
     </div>
+} -->
+
+<h1>&#64; Output + EventListener</h1>
+
+<app-child (getUsers)="handleUsers($event)"></app-child>
+
+@for (user of users; track $index) {
+    <div>{{user}}</div>
 }
