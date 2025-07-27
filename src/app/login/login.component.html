@@ -11,14 +11,21 @@
     <h3>{{password.value}}</h3> -->
 <!-- </form> -->
 
-<h1>Form Grouping in Reactive Forms</h1>
+<h1>Form Grouping in Reactive Forms: With Validation</h1>
 <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
     <input type="text" placeholder="enter name" formControlName="name">
+    <span *ngIf="name?.hasError('required')" style="color: red;">*</span>
+    <span *ngIf="name?.invalid && (name?.dirty || name?.touched)" style="color: red;"> Provide a valid Name</span>
     <br><br>
     <input type="password" placeholder="enter password" formControlName="password">
+    <span *ngIf="password?.hasError('required')" style="color: red;">*</span>
+    <span *ngIf="password?.invalid && (password?.dirty || password?.touched)" style="color: red;"> Provide a valid
+        password</span>
     <br><br>
     <input type="email" placeholder="enter email" formControlName="email">
-    <br><br> 
+    <span *ngIf="email?.hasError('required')" style="color: red;">*</span>
+    <span *ngIf="email?.invalid && (email?.dirty || email?.touched)" style="color: red;"> Provide a valid email</span>
+    <br><br>
     <button>Submit</button>
-    <button (click)="setValue()">setValue</button>
+    <!-- <button (click)="setValue()">setValue</button> -->
 </form>
