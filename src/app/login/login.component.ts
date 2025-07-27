@@ -10,12 +10,12 @@ import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Valid
 })
 export class LoginComponent {
 
-  userDetail:any
+  userData:any
 
-  addDetails(val:NgForm){
+  addUser(val:NgForm){
 
     console.log(val);
-    this.userDetail = val
+    this.userData = val
     
   }
 
