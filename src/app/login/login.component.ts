@@ -1,14 +1,25 @@
-import { NgIf } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgFor, NgIf } from '@angular/common';
+import { Component, NgModule } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, NgIf],
+  imports: [ReactiveFormsModule, NgIf, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
+
+  userDetail:any
+
+  addDetails(val:NgForm){
+
+    console.log(val);
+    this.userDetail = val
+    
+  }
+
+
 
   // name = new FormControl('username') //with default value. otherwise is also fine
   // password = new FormControl('password')
@@ -22,31 +33,31 @@ export class LoginComponent {
   //   this.password.setValue('321456')
   // }
 
-  emailPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$';
+  // emailPattern = '^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$';
 
-  profileForm = new FormGroup({
-    name: new FormControl('', [Validators.required]), //Form Validation Included...
-    password: new FormControl('', [Validators.required, Validators.minLength(5)]),
-    email: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.pattern(this.emailPattern)])
-  })
+  // profileForm = new FormGroup({
+  //   name: new FormControl('', [Validators.required]), //Form Validation Included...
+  //   password: new FormControl('', [Validators.required, Validators.minLength(5)]),
+  //   email: new FormControl('', [Validators.required, Validators.maxLength(50), Validators.pattern(this.emailPattern)])
+  // })
 
-  onSubmit() {
-    console.log("submit is called");
+  // onSubmit() {
+  //   console.log("submit is called");
 
-    console.log(this.profileForm.value);
-  }
+  //   console.log(this.profileForm.value);
+  // }
 
   
-  public get name() {                          // Getters in reactive forms are used foe shortening the requirement of writing big expressions while using in code.
-    return this.profileForm.get('name')        // Increases code Readability
-  }
+  // public get name() {                          // Getters in reactive forms are used foe shortening the requirement of writing big expressions while using in code.
+  //   return this.profileForm.get('name')        // Increases code Readability
+  // }
 
-  public get password() {
-    return this.profileForm.get('password')
-  }  
-  public get email() {
-    return this.profileForm.get('email')
-  }
+  // public get password() {
+  //   return this.profileForm.get('password')
+  // }  
+  // public get email() {
+  //   return this.profileForm.get('email')
+  // }
 
 
   // setValue() {
