@@ -1,19 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from "./header/header.component";
-import { ParrentChildComponent } from "./parrent-child/parrent-child.component";
+import { ReuseUserComponent } from "./reuse-user/reuse-user.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, ParrentChildComponent],
+  imports: [ReuseUserComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  userName = ''
+  
+  users = ["Alice", "Bob", "Charlie", "Diana", "Ethan", "Fiona", "George", "Hannah", "Ivan", "Julia"];
 
-  onUserChange(val:string){
-    // this.userName=val
-  }
 
 }

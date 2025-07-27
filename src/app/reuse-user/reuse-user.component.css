@@ -1,0 +1,11 @@
+h3{
+    border: 1px solid green;
+    width: 50%;
+    display:flex;
+    justify-content: space-between;
+}
+
+span{
+    background-color: red;
+    display:inline-block
+}

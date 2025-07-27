@@ -1,12 +1,12 @@
 <!-- <app-header/>
 <router-outlet /> -->
 
-<h2>Pass data child to parrent</h2>
+<!-- <h2>Pass data child to parrent</h2> -->
 
 
 <!-- //Static data passing...
 <app-parrent-child user="Milky way"></app-parrent-child> -->
-
+<!-- 
 <app-parrent-child [user]="selectedUser.value" city="Gurugram"></app-parrent-child>
 
 
@@ -15,4 +15,12 @@
     <option value="Sam ">Sam</option>
     <option value="Peter">Peter</option>
     <option value="Tony">Tony</option>
-</select>
+</select> -->
+
+<h1>Reuse Components</h1>
+
+@for (user of users; track $index) {
+    <div>
+        <app-reuse-user [user] = "user"></app-reuse-user>
+    </div>
+}
