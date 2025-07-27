@@ -1,14 +1,18 @@
-<h1>Routing in Angular!!!</h1>
+<!-- <app-header/>
+<router-outlet /> -->
 
-<ul>
-  <li>
-    <a routerLink="./login">Login</a>
-  </li>
-  <li>
-    <a routerLink="/about">About</a>
-  </li>
-  <li>
-    <a routerLink="/contact">Contact</a>
-  </li>
-</ul>
-<router-outlet />
+<h2>Pass data child to parrent</h2>
+
+
+<!-- //Static data passing...
+<app-parrent-child user="Milky way"></app-parrent-child> -->
+
+<app-parrent-child [user]="selectedUser.value" city="Gurugram"></app-parrent-child>
+
+
+<select #selectedUser (change)="onUserChange(selectedUser.value)">
+    <option value="Milky Way">Milky Way</option>
+    <option value="Sam ">Sam</option>
+    <option value="Peter">Peter</option>
+    <option value="Tony">Tony</option>
+</select>
